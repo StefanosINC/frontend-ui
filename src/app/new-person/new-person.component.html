@@ -1,0 +1,56 @@
+<h1 mat-dialog-title> Employee Form</h1>
+<div mat-dialog-content>
+    <form [formGroup]="employeeForm">
+      
+    <mat-form-field matColumnDef="username">
+      <mat-label>Username</mat-label>
+      <input formControlName="username" matInput placeholder="Name"/>
+  
+    </mat-form-field>
+
+     <mat-form-field matColumnDef="">
+        <mat-label>Password</mat-label>
+        <input formControlName="password" matInput placeholder="Name"/>
+    
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>email</mat-label>
+        <input formControlName="email" matInput placeholder="Name"/>
+    
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>phone</mat-label>
+        <input formControlName="phone" matInput placeholder="Name"/>
+    
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>firstname</mat-label>
+        <input formControlName="firstname" matInput placeholder="Name"/>
+    
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>lastname</mat-label>
+        <input formControlName="lastname" matInput placeholder="Name"/>
+    
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>role</mat-label>
+        <input formControlName="role" matInput placeholder="Name"/>
+    
+      </mat-form-field> 
+
+       
+      </form>
+    </div>
+         <div mat-dialog-action [align]="'end'">
+            <button mat-raised-button color="warn" (click)="createEmployee()" mat-dialog-close>Create</button>
+            <button mat-raised-button color="Primary" mat-raised-buttono color="primary" (click)="createEmployee()">{{actionBtn}}</button>
+       
+        </div> 
+
+
+

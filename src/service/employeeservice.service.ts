@@ -8,7 +8,7 @@ import { Employee } from '../app/models/employee';
 })
 export class EmployeeserviceService {
   private apiServerUrl = environment.apiBaseUrl;
-  
+
   constructor(private http: HttpClient) { }
 
     
@@ -17,7 +17,7 @@ export class EmployeeserviceService {
         }
 
         public addEmployee(employee: Employee): Observable<Employee[]>{
-            return this.http.post<Employee[]>(`${this.apiServerUrl}/service/createEmployee`, employee);
+            return this.http.post<Employee[]>(`${this.apiServerUrl}/createEmployee`, employee);
         }
 
         public deleteEmployee(employee_id: number): Observable<void>{

@@ -5,6 +5,8 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { EmployeeserviceService } from 'src/service/employeeservice.service';
+import { AddEmployeeComponent } from './../add-employee/add-employee.component';
+import { NewPersonComponent } from './../new-person/new-person.component';
 
 @Component({
   selector: 'app-employee-management',
@@ -17,51 +19,35 @@ export class EmployeeManagementComponent implements OnInit {
   displayedColumns: string[] = ['employee_id','username','password','email', 'phone', 'firstname', 'lastname', 'role'];
   dataSource!: MatTableDataSource<any>;
 
-  // establish a form Group
-  employeeForm !: FormGroup;
-
+  
   actionBtn : string = "Save";
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
 
-  constructor(private formBuilder: FormBuilder, private api: EmployeeserviceService) {
+  constructor(private api: EmployeeserviceService, private dialog: MatDialog) {
 
     
    }
 
   ngOnInit(): void {
     this.getEmployees();
-    this.employeeForm = this.formBuilder.group({
-      
-      // username : ['', Validators.required],
-      // password : ['', Validators.required],
-      // email : ['', Validators.required],
-      //  phone : ['', Validators.required],
-      // firstname : ['', Validators.required],
-      // lastname : ['', Validators.required],
-      // role : ['', Validators.required],
-    });
 
-    // if(this.editData){
-    //   this.actionBtn = "Update";
-    //   this.employeeForm.controls['username'].setValue(this.editData.);
-    //   this.employeeForm.controls['password'].setValue(this.editData.category);
-    //   this.employeeForm.controls['email'].setValue(this.editData.freshness);
-    //   this.employeeForm.controls['phone'].setValue(this.editData.price);
-    //   this.employeeForm.controls['firstname'].setValue(this.editData.comment);
-    //   this.employeeForm.controls['role'].setValue(this.editData.date);
-    // }
-
-
-
-
-
-    // Retrieve Employees
-   
    
   }
+  openDialog() {
+    console.log("Component was opened");
+    this.dialog.open(NewPersonComponent, {
+      width: '30%'
+     
+    }).afterClosed().subscribe(val=>{
+      if(val ==='save'){
+        this.getEmployees();
+      }
+    })
+  }
+
 
   getEmployees(){
     this.api.getEmployees().subscribe({next:(res)=>{this.dataSource = new MatTableDataSource(res);
@@ -83,4 +69,6 @@ export class EmployeeManagementComponent implements OnInit {
       this.dataSource.paginator.firstPage();
   }
 }
+
+
 }

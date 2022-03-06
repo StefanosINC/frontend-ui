@@ -1,6 +1,8 @@
-
-  <button mat-raised-button color="warn"> Add Product</button>
-  
+<mat-toolbar color ="primary">
+    <span>Employee Management Services</span>
+    <span class="example-spacer"></span>
+  <button mat-raised-button color="warn" (click)="openDialog()"> Add Employee</button>
+</mat-toolbar>
   <div class ="container">
   
     <div style="margin-top: 10px;">
@@ -41,7 +43,7 @@
              <!-- Phone -->
              <ng-container matColumnDef="phone">
               <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
-              <td mat-cell *matCellDef="let row"> {{row.price | currency}} </td>
+              <td mat-cell *matCellDef="let row"> {{row.phone }} </td>
             </ng-container>
             
            <!-- Firstname -->

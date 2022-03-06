@@ -27,16 +27,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import {AddEmployeeComponent} from './add-employee/add-employee.component';
+import { NewPersonComponent } from './new-person/new-person.component';
 
 
-registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    AddEmployeeComponent,
+    routingComponents,
+    NewPersonComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
