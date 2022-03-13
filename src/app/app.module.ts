@@ -29,6 +29,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {AddEmployeeComponent} from './add-employee/add-employee.component';
 import { NewPersonComponent } from './new-person/new-person.component';
+import { TimeCardSheetComponent } from './TimeCard/time-card-sheet/time-card-sheet.component';
+import { NewTimeComponent } from './TimeCard/new-time/new-time.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { NewPersonComponent } from './new-person/new-person.component';
     AppComponent,
     AddEmployeeComponent,
     routingComponents,
-    NewPersonComponent
+    NewPersonComponent,
+    TimeCardSheetComponent,
+    NewTimeComponent
   ],
   imports: [
   BrowserModule,

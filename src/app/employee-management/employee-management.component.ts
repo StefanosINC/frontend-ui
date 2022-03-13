@@ -21,6 +21,8 @@ export class EmployeeManagementComponent implements OnInit {
 
   
   actionBtn : string = "Save";
+  [x: string]: any;
+  isCollapsed = false;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -69,6 +71,28 @@ export class EmployeeManagementComponent implements OnInit {
       this.dataSource.paginator.firstPage();
   }
 }
-
+editProduct(){
 
 }
+deleteEmployee(id:number){
+
+  
+    this.api.deleteEmployee(id).subscribe({
+      next:(res)=>{
+        alert("Product delete sucessfully");
+        this.getEmployees();
+    
+    },
+    error:()=>{
+      
+      alert("Error while deleting the product");
+    
+    }
+    })
+  }
+  }
+
+
+
+
+
