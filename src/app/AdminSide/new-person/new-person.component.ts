@@ -13,10 +13,13 @@ export class NewPersonComponent implements OnInit {
   // establish a form Group
   employeeForm !: FormGroup;
 
+  // action btn
   actionBtn : string = "Save";
 
+  // Pass in form builders, services, and any dialog ref
   constructor(private formBuilder: FormBuilder, private api : EmployeeserviceService, @Inject(MAT_DIALOG_DATA) public editData : any, private dialogRef : MatDialogRef<NewPersonComponent>) { }
 
+  // Iniitiate a Form Group
   ngOnInit(): void {
     this.employeeForm = this.formBuilder.group({
       username : ['', Validators.required],
@@ -28,6 +31,8 @@ export class NewPersonComponent implements OnInit {
        role : ['', Validators.required]
      });
 }
+
+// create Employee method
 createEmployee(){
   
   if(!this.editData){
@@ -47,7 +52,7 @@ createEmployee(){
       })
     }
   }
-  // this might be update product struggling to get this to work
+  
 }
 }
 

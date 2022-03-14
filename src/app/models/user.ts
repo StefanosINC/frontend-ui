@@ -1,3 +1,5 @@
+
+// User Model Class
 export interface TimeCard{
 
     id: number;

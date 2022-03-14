@@ -1,3 +1,6 @@
+
+// Timecard Model Class
+
 export interface TimeCard{
 
     id: number;
@@ -9,4 +12,3 @@ export interface TimeCard{
     role: string;
 }
 
-// Test

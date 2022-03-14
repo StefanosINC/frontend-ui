@@ -1,3 +1,6 @@
+
+// Employee Model Class
+
 export interface Employee{
 
     employee_id: number;

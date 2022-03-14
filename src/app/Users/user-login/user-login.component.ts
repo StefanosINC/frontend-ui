@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.css']
 })
+// This is the login component that inherits a set of parameters of username password 
+
 export class UserLoginComponent implements OnInit {
   username: string;
   password: string;
@@ -18,6 +20,8 @@ export class UserLoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Navigation route to the Admin - ui
+  
   Nextpage(){
     this.route.navigate(['/admin-ui']);
 
