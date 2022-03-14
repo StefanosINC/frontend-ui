@@ -31,6 +31,8 @@ import {AddEmployeeComponent} from './add-employee/add-employee.component';
 import { NewPersonComponent } from './new-person/new-person.component';
 import { TimeCardSheetComponent } from './TimeCard/time-card-sheet/time-card-sheet.component';
 import { NewTimeComponent } from './TimeCard/new-time/new-time.component';
+import { AdminUiComponent } from './admin-ui/admin-ui.component';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { NewTimeComponent } from './TimeCard/new-time/new-time.component';
     routingComponents,
     NewPersonComponent,
     TimeCardSheetComponent,
-    NewTimeComponent
+    NewTimeComponent,
+    AdminUiComponent,
+    UserLoginComponent
   ],
   imports: [
   BrowserModule,

@@ -8,6 +8,7 @@ import { EmployeeserviceService } from 'src/service/employeeservice.service';
 import { AddEmployeeComponent } from './../add-employee/add-employee.component';
 import { NewPersonComponent } from './../new-person/new-person.component';
 
+
 @Component({
   selector: 'app-employee-management',
   templateUrl: './employee-management.component.html',

@@ -32,17 +32,7 @@ export class TimeCardSheetComponent implements OnInit {
 
     // this.getTimeCard();
   }
-  // openDialog() {
-  //   console.log("Component was opened");
-  //   this.dialog.open(NewTimeComponent), {
-  //     width: '30%'
-     
-  //   }).afterClosed().subscribe(val=>{
-  //     if(val ==='save'){
-  //       this.getTimeCard();
-  //     }
-  //   })
-  // }
+ 
 
 }
 

@@ -13,6 +13,8 @@ export class SchedulecomponentComponent implements OnInit {
 
    
   ngOnInit(): void {
+    
+    
 
   }
 
