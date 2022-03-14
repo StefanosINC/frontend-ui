@@ -13,7 +13,6 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/user-login' },
   { path: 'employee-management', component: EmployeeManagementComponent},
   {path: 'schedulecomponent', component: SchedulecomponentComponent},
-  {path: 'welcome', loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule) },
   {path: 'time-card-sheet', component: TimeCardSheetComponent},
   {path: 'admin-ui', component: AdminUiComponent},
   {path: 'user-login', component: UserLoginComponent},
