@@ -13,6 +13,7 @@
       </div>
       <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
         <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+    
           <ul>
             <li nz-menu-item nzMatchRouter>
               <a class = "nav-link" (click)="ToggleEmployee()"> Employee Management </a>
@@ -49,11 +50,12 @@
       </nz-header>
       <nz-content>
         <div class="inner-content">
+         <h1> Adminstrative Portal</h1>
           <router-outlet></router-outlet>
 
             <app-employee-management *ngIf = "isEmployee"></app-employee-management>
             <app-schedulecomponent *ngIf = "isSchedule"></app-schedulecomponent>
-            
+            <app-time-card-sheet *ngIf = "isTimecard"></app-time-card-sheet>
         </div>
       </nz-content>
     </nz-layout>

@@ -5,6 +5,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { EmployeeserviceService } from 'src/service/employeeservice.service';
+import { TimecardService } from 'src/service/timecard.service';
 
 
 
@@ -20,20 +21,32 @@ export class TimeCardSheetComponent implements OnInit {
   dataSource!: MatTableDataSource<any>;
 
   actionBtn : string = "Save";
-
+  [x: string]: any;
+  isCollapsed = false;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
 
-  constructor(private api: EmployeeserviceService, private dialog: MatDialog) { }
+  constructor(private api: TimecardService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
 
-    // this.getTimeCard();
+    this.getTimeCard1();
   }
  
-
+  getTimeCard1(){
+    this.api.getTimeCard().subscribe({next:(res)=>{this.dataSource = new MatTableDataSource(res);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    
+    },
+    error:(err)=>{
+      alert("Error while grabbing TimeCard!");
+    }
+  })
+  }
 }
+
 
 
