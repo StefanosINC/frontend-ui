@@ -5,7 +5,6 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { EmployeeserviceService } from 'src/service/employeeservice.service';
-import { AddEmployeeComponent } from './../add-employee/add-employee.component';
 import { NewPersonComponent } from './../new-person/new-person.component';
 
 

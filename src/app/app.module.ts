@@ -7,8 +7,6 @@ import { AppComponent } from './app.component';
 import { EmployeeserviceService } from '../service/employeeservice.service';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
-import { registerLocaleData } from '@angular/common';
-import en from '@angular/common/locales/en';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -27,24 +25,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
-import {AddEmployeeComponent} from './add-employee/add-employee.component';
-import { NewPersonComponent } from './new-person/new-person.component';
-import { TimeCardSheetComponent } from './TimeCard/time-card-sheet/time-card-sheet.component';
-import { NewTimeComponent } from './TimeCard/new-time/new-time.component';
-import { AdminUiComponent } from './admin-ui/admin-ui.component';
-import { UserLoginComponent } from './user-login/user-login.component';
-
+import { TimeCardSheetComponent } from './AdminSide/time-card-sheet/time-card-sheet.component';
+import { AdminUiComponent } from './AdminSide/admin-ui/admin-ui.component';
+import { UserLoginComponent } from './Users/user-login/user-login.component';
+import { NewPersonComponent } from './AdminSide/new-person/new-person.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddEmployeeComponent,
     routingComponents,
-    NewPersonComponent,
     TimeCardSheetComponent,
-    NewTimeComponent,
     AdminUiComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    NewPersonComponent
+ 
   ],
   imports: [
   BrowserModule,
