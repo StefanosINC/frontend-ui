@@ -15,14 +15,14 @@ export class TimecardService {
   constructor(private http: HttpClient) { }
 
 
-  public getTimeCard(): Observable<TimeCard[]>{
+public getTimeCard(): Observable<TimeCard[]>{
     return this.http.get<TimeCard[]>(`${this.apiServerUrl}/getCard`);
 }
-public CreateTimePunch(id: TimeCard): Observable<TimeCard[]>{
-  return this.http.get<TimeCard[]>(`${this.apiServerUrl}/getTimeCard/${id}`);
+public CreateTimePunch(timecard: TimeCard): Observable<TimeCard[]>{
+  return this.http.get<TimeCard[]>(`${this.apiServerUrl}/service1/Punch/${timecard}`);
 }
-public DeleteTimePunch(): Observable<TimeCard[]>{
-  return this.http.get<TimeCard[]>(`${this.apiServerUrl}/getCard`);
+public DeleteTimePunch(id: TimeCard): Observable<TimeCard[]>{
+  return this.http.get<TimeCard[]>(`${this.apiServerUrl}/service1/DeleteTimeCardID/${id}`);
 }
 public UpdateTimePunch(): Observable<TimeCard[]>{
   return this.http.get<TimeCard[]>(`${this.apiServerUrl}/getCard`);
