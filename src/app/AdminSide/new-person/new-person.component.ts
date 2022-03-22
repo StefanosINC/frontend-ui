@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EmployeeserviceService } from '../../../service/employeeservice.service';
+import { Employee } from './../../Models/employee';
 
 @Component({
   selector: 'app-new-person',
@@ -33,17 +34,18 @@ export class NewPersonComponent implements OnInit {
 }
 
 // create Employee method
-createEmployee(){
+CreateEmployee(){
   
-  if(!this.editData){
-    console.log("3");
+  // if(!this.editData){
+    
     if(this.employeeForm.valid){
-      console.log("2");
+  
       this.api.addEmployee(this.employeeForm.value).subscribe({
         next:(res)=>{
           alert("Employee Created Sucessful");
           this.employeeForm.reset();
           this.dialogRef.close('save');
+          console.log(res);
         },
         error:()=>{
           alert("Error while adding the products");
@@ -54,5 +56,14 @@ createEmployee(){
   }
   
 }
-}
+
+
+// Test(){
+
+//   this.api.addEmployee(this.employeeForm.value).subscribe((data)=>{
+    
+//     console.log(data);
+//   })
+// }
+
 

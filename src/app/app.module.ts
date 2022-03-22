@@ -29,6 +29,11 @@ import { TimeCardSheetComponent } from './AdminSide/time-card-sheet/time-card-sh
 import { AdminUiComponent } from './AdminSide/admin-ui/admin-ui.component';
 import { UserLoginComponent } from './Users/user-login/user-login.component';
 import { NewPersonComponent } from './AdminSide/new-person/new-person.component';
+import { EmployeeUiComponent } from './EmployeeSide/EmployeeUI/employee-ui/employee-ui.component';
+import {NzBreadCrumbModule} from 'ng-zorro-antd/breadcrumb';
+import { EmployeeManagementUIComponent } from './AdminSide/employee-managementUI/employee-management-ui/employee-management-ui.component';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,9 @@ import { NewPersonComponent } from './AdminSide/new-person/new-person.component'
     TimeCardSheetComponent,
     AdminUiComponent,
     UserLoginComponent,
-    NewPersonComponent
+    NewPersonComponent,
+    EmployeeUiComponent,
+    EmployeeManagementUIComponent
  
   ],
   imports: [
@@ -64,7 +71,10 @@ import { NewPersonComponent } from './AdminSide/new-person/new-person.component'
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    NzBreadCrumbModule,
+    NzGridModule,
+    NzTableModule
 
   ],
   providers: [EmployeeserviceService, { provide: NZ_I18N, useValue: en_US }],

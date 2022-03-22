@@ -21,13 +21,13 @@ export class EmployeeserviceService {
         }
 
         // Add Employee API
-        public addEmployee(employee: Employee): Observable<Employee[]>{
+        public addEmployee(employee: any): Observable<Employee[]>{
             return this.http.post<Employee[]>(`${this.apiServerUrl}/createEmployee`, employee);
         }
 
         // Delete Employee API
         public deleteEmployee(employee_id: number): Observable<void>{
-            return this.http.delete<void>(`${this.apiServerUrl}/service/deleteEmployee/${employee_id}`);
+            return this.http.delete<void>(`${this.apiServerUrl}/deleteEmployee/${employee_id}`);
         }
         
         // Search Employee API

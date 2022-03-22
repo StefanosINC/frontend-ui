@@ -15,11 +15,12 @@ import { NewPersonComponent } from './../new-person/new-person.component';
 })
 export class EmployeeManagementComponent implements OnInit {
 
+  // Main class for the Employee Management Page 
   title = "Capstone Project Employee"
   displayedColumns: string[] = ['employee_id','username','password','email', 'phone', 'firstname', 'lastname', 'role'];
   dataSource!: MatTableDataSource<any>;
 
-  
+  // Action Btn
   actionBtn : string = "Save";
   [x: string]: any;
   isCollapsed = false;
@@ -33,11 +34,13 @@ export class EmployeeManagementComponent implements OnInit {
     
    }
 
+   // return employees
   ngOnInit(): void {
     this.getEmployees();
 
    
   }
+  // Creaet a new Person ( this is the dialog open)
   openDialog() {
     console.log("Component was opened");
     this.dialog.open(NewPersonComponent, {
@@ -51,6 +54,7 @@ export class EmployeeManagementComponent implements OnInit {
   }
 
 
+  // Get employees
   getEmployees(){
     this.api.getEmployees().subscribe({next:(res)=>{this.dataSource = new MatTableDataSource(res);
       this.dataSource.paginator = this.paginator;
@@ -63,6 +67,7 @@ export class EmployeeManagementComponent implements OnInit {
   })
   }
   
+  // Apply Filter
   applyFilter(event: Event){
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -74,10 +79,12 @@ export class EmployeeManagementComponent implements OnInit {
 editProduct(){
 
 }
-deleteEmployee(id:number){
+
+// Delete Employee
+deleteEmployee(employee_id :number){
 
   
-    this.api.deleteEmployee(id).subscribe({
+    this.api.deleteEmployee(employee_id).subscribe({
       next:(res)=>{
         alert("Product delete sucessfully");
         this.getEmployees();
@@ -86,7 +93,7 @@ deleteEmployee(id:number){
     error:()=>{
       
       alert("Error while deleting the product");
-    
+      console.log(employee_id);
     }
     })
   }

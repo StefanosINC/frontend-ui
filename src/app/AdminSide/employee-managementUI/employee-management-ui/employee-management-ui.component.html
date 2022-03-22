@@ -1,0 +1,37 @@
+
+<button mat-raised-button color="primary" (click)="openDialog()"> Add Employee</button>
+<nz-table #fixedTable [nzData]="listOfData" [nzScroll]="{ x: '1000px', y: '240px' }">
+    <thead>
+      <tr>
+        <th nzLeft>username</th>
+        <th nzLeft>password</th>
+        <th nzLeft>email</th>
+        <th nzLeft>phone</th>
+        <th nzLeft>firstname</th>
+        <th nzLeft>lastname</th>
+        <th nzLeft>role</th>
+
+        <th nzRight>Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of fixedTable.data">
+       
+        <td nzLeft>{{ data.username }}</td>
+        <td nzLeft>{{ data.password }}</td>
+        <td nzLeft>{{ data.email }}</td>
+        <td nzLeft>{{ data.phone }}</td>
+        <td nzLeft>{{ data.firstname }}</td>
+        <td nzLeft>{{ data.lastname }}</td>
+        <td nzLeft>{{ data.role }}</td>
+
+        <td nzRight>
+          <button>Edit</button>
+          <button>Delete</button>
+        </td>
+       
+       
+      </tr>
+    </tbody>
+  </nz-table>

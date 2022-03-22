@@ -1,3 +1,5 @@
+
+<!-- Imported Library for Front End UI-->
 <nz-layout class="app-layout">
     <nz-sider class="menu-sidebar"
               nzCollapsible
@@ -53,10 +55,12 @@
          <h1> Adminstrative Portal</h1>
           <router-outlet></router-outlet>
 
-            <app-employee-management *ngIf = "isEmployee"></app-employee-management>
+            <app-employee-management-ui *ngIf = "isEmployee"></app-employee-management-ui>
             <app-schedulecomponent *ngIf = "isSchedule"></app-schedulecomponent>
             <app-time-card-sheet *ngIf = "isTimecard"></app-time-card-sheet>
+          
         </div>
+        <nz-footer>WorkXTimeAndAttendance Incorporated @2022</nz-footer>
       </nz-content>
     </nz-layout>
   </nz-layout>

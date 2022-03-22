@@ -23,6 +23,7 @@ export class UserLoginComponent implements OnInit {
   // Navigation route to the Admin - ui
   
   Nextpage(){
+    
     this.route.navigate(['/admin-ui']);
 
   }
