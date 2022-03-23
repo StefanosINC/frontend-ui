@@ -3,6 +3,7 @@
 <nz-table #fixedTable [nzData]="listOfData" [nzScroll]="{ x: '1000px', y: '240px' }">
     <thead>
       <tr>
+        <th nzLeft>ID</th>
         <th nzLeft>username</th>
         <th nzLeft>password</th>
         <th nzLeft>email</th>
@@ -17,7 +18,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let data of fixedTable.data">
-       
+        <td nzLeft>{{ data.employee_id}} </td>
         <td nzLeft>{{ data.username }}</td>
         <td nzLeft>{{ data.password }}</td>
         <td nzLeft>{{ data.email }}</td>
@@ -26,9 +27,11 @@
         <td nzLeft>{{ data.lastname }}</td>
         <td nzLeft>{{ data.role }}</td>
 
+
         <td nzRight>
-          <button>Edit</button>
-          <button>Delete</button>
+          <button mat-raised-button color="primary" (click)="Delete(data.employee_id)" mat-dialog-close>Delete</button>
+          <button mat-raised-button color="warn" (click)="editProduct(data)" mat-dialog-close>Edit</button>
+         
         </td>
        
        

@@ -22,7 +22,8 @@ const routes: Routes = [
   {path: 'user-login', component: UserLoginComponent},
   {path: 'new-person', component: NewPersonComponent},
   {path: 'employee-ui', component: EmployeeUiComponent},
-  {path: 'employee-managementUI', component: EmployeeManagementUIComponent}
+  {path: 'employee-managementUI', component: EmployeeManagementUIComponent},
+  
 ];
 
 @NgModule({

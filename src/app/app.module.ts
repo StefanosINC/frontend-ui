@@ -34,6 +34,7 @@ import {NzBreadCrumbModule} from 'ng-zorro-antd/breadcrumb';
 import { EmployeeManagementUIComponent } from './AdminSide/employee-managementUI/employee-management-ui/employee-management-ui.component';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzTableModule } from 'ng-zorro-antd/table';
+import { EditPersonComponent } from './AdminSide/edit-person/edit-person/edit-person.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { NzTableModule } from 'ng-zorro-antd/table';
     UserLoginComponent,
     NewPersonComponent,
     EmployeeUiComponent,
-    EmployeeManagementUIComponent
+    EmployeeManagementUIComponent,
+    EditPersonComponent
  
   ],
   imports: [

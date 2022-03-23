@@ -24,7 +24,6 @@ export class Employee{
         this.lastname = lastname;
         this.role = role;
 
-
     }
 
 }

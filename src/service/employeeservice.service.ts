@@ -36,7 +36,9 @@ export class EmployeeserviceService {
             return this.http.delete<void>(`${this.apiServerUrl}/service/Search/${employee_id}`);
         }
         // Update Employee API
-        
-
-  }
+        public updateEmployee(employee: Employee): Observable<Employee[]>{
+            return this.http.put<Employee[]>(`${this.apiServerUrl}/updateEmployee`, employee);
+        }
+      
+    }
 

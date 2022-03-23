@@ -48,5 +48,38 @@ openDialog() {
   getEmployees() {
     throw new Error('Method not implemented.');
   }
+
+  Delete(id: number){
+    this.api.deleteEmployee(id).subscribe({
+      next:(res)=>{
+        console.log(res);
+       
+        this.getEmployees();
+
+      },
+      error:()=>{
+    
+      }
+    })
+
+    console.log("here");
+  }
+  
+  editProduct(row : any){
+    console.log("Edit Component");
+    this.dialog.open(NewPersonComponent,{
+      width:'30%',
+      data:row
+     
+      
+    }).afterClosed().subscribe(val=>{
+      if(val === 'update'){
+       
+        this.getEmployees();
+      }
+    })
+    
+  }
+
 }
 
