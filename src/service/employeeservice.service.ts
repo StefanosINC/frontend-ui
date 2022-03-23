@@ -21,7 +21,7 @@ export class EmployeeserviceService {
         }
 
         // Add Employee API
-        public addEmployee(employee: any): Observable<Employee[]>{
+        public addEmployee(employee: Employee): Observable<Employee[]>{
             return this.http.post<Employee[]>(`${this.apiServerUrl}/createEmployee`, employee);
         }
 

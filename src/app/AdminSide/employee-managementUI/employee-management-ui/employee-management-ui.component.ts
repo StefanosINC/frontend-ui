@@ -36,10 +36,12 @@ openDialog() {
   console.log("Component was opened");
   this.dialog.open(NewPersonComponent, {
     width: '30%'
+
    
   }).afterClosed().subscribe(val=>{
     if(val ==='save'){
       this.getEmployees();
+      console.log(val + " This is the in the Employee UI");
     }
   })
 }

@@ -1,56 +1,55 @@
-<h1 mat-dialog-title> Employee Form</h1>
-<div mat-dialog-content>
-    <form [formGroup]="employeeForm">
-      
-    <mat-form-field matColumnDef="username">
-      <mat-label>Username</mat-label>
-      <input formControlName="username" matInput placeholder="Name"/>
+<h2>Create Employee Form</h2>
+
+
   
-    </mat-form-field>
+      
+    <div>
+      <label for="employee-username">Username: </label>
+      <input id="employee-username" [(ngModel)]="username" placeholder = "username">
+      <br/>
+      <br/>
 
-     <mat-form-field matColumnDef="">
-        <mat-label>Password</mat-label>
-        <input formControlName="password" matInput placeholder="Name"/>
-    
-      </mat-form-field>
+      <label for="employee-password">Password: </label>
+      <input id="employee-password" [(ngModel)]="password" placeholder="password">
+    <br/>
+    <br/>
 
-      <mat-form-field matColumnDef="outline">
-        <mat-label>email</mat-label>
-        <input formControlName="email" matInput placeholder="Name"/>
-    
-      </mat-form-field>
+    <label for="employee-email">email: </label>
+    <input id="employee-email" [(ngModel)]="email" placeholder="email"  placeholder="email">
+    <br/>
+    <br/>
 
-      <mat-form-field matColumnDef="outline">
-        <mat-label>phone</mat-label>
-        <input formControlName="phone" matInput placeholder="Name"/>
-    
-      </mat-form-field>
 
-      <mat-form-field matColumnDef="outline">
-        <mat-label>firstname</mat-label>
-        <input formControlName="firstname" matInput placeholder="Name"/>
-    
-      </mat-form-field>
+    <label for="album-year">phone: </label>
+    <input id="album-title" [(ngModel)]="phone" placeholder="phone"  placeholder="phone">
+    <br/>
+    <br/>
 
-      <mat-form-field matColumnDef="outline">
-        <mat-label>lastname</mat-label>
-        <input formControlName="lastname" matInput placeholder="Name"/>
-    
-      </mat-form-field>
-      <mat-form-field matColumnDef="outline">
-        <mat-label>role</mat-label>
-        <input formControlName="role" matInput placeholder="Name"/>
-    
-      </mat-form-field> 
+    <label for="album-year">firstname: </label>
+    <input id="album-title" [(ngModel)]="firstname" placeholder="firstname"  placeholder="firstname">
+    <br/>
+    <br/>
 
-       
-      </form>
+    <label for="album-year">lastname: </label>
+    <input id="album-title" [(ngModel)]="lastname" placeholder="lastname"  placeholder="lastname">
+    <br/>
+    <br/>
+
+    <label for="album-year">role: </label>
+    <input id="album-title" [(ngModel)]="role" placeholder="role"  placeholder="role">
+    <br/>
+    <br/>
+
+
+
+
+
+
+
+
+
+
     </div>
-         <div mat-dialog-action [align]="'end'">
-            <button mat-raised-button color="warn" (click)="CreateEmployee()" mat-dialog-close>Create</button>
-            
-       
-        </div> 
 
-
+<button type="button" (click)="CreateEmployee()">create</button>
 
