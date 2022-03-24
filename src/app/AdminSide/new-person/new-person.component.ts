@@ -36,8 +36,9 @@ export class NewPersonComponent implements OnInit {
        role : ['', Validators.required]
        
      });
-
+  
 if(this.editData){
+  console.log("Here in updated");
   this.actionBtn = "Update";
   this.employeeForm.controls['username'].setValue(this.editData.username);
   this.employeeForm.controls['password'].setValue(this.editData.password);
@@ -48,12 +49,13 @@ if(this.editData){
   this.employeeForm.controls['role'].setValue(this.editData.role);
   
 }
-  }
+}
 // create Employee method
 CreateEmployee(){
   
   // if(!this.editData){
-    
+      if(!this.editData){
+        console.log("here");
     if(this.employeeForm.valid){
   
       console.log("This is before the API" + this.employeeForm);
@@ -72,8 +74,12 @@ CreateEmployee(){
         }
       })
     }
+  }else{
+   
+    this.Update();
+    console.log("test");
   }
-
+}
   
 Update(){
 

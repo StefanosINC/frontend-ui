@@ -52,9 +52,9 @@
       </nz-header>
       <nz-content>
         <div class="inner-content">
-         <h1> Adminstrative Portal</h1>
+        
           <router-outlet></router-outlet>
-
+            
             <app-employee-management-ui *ngIf = "isEmployee"></app-employee-management-ui>
             <app-schedulecomponent *ngIf = "isSchedule"></app-schedulecomponent>
             <app-time-card-sheet *ngIf = "isTimecard"></app-time-card-sheet>

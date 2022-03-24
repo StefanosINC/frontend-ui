@@ -16,37 +16,43 @@ import { TimecardService } from 'src/service/timecard.service';
 })
 export class TimeCardSheetComponent implements OnInit {
 
-  title = "Capstone TimeCard Management";
-  displayedColumns: string[] = ['id', 'firstname', 'lastname','punch_in','punch_out', 'comments', 'role'];
-  dataSource!: MatTableDataSource<any>;
-
-  actionBtn : string = "Save";
-  [x: string]: any;
-  isCollapsed = false;
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
+  listOfData: Array<{ id: number; firstname: string, lastname: string, punch_in: string, punch_out: string, comments: string,  role: string}> = [];
 
 
   constructor(private api: TimecardService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
 
-    this.getTimeCard1();
+    this.getTimeCard();
   }
  
-  getTimeCard1(){
-    this.api.getTimeCard().subscribe({next:(res)=>{this.dataSource = new MatTableDataSource(res);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-    
-    },
-    error:(err)=>{
-      alert("Error while grabbing TimeCard!");
+  getTimeCard(){
+    return this.api.getTimeCard().subscribe((data: any[])=>{
+     
+      this.listOfData = data;
+      console.log( data);
+    })
     }
-  })
+   
+  Delete(id: number){
+   
+    this.api.DeleteTimePunch(id).subscribe({
+      next:(res)=>{
+        
+       
+        this.getTimeCard();
+
+      },
+      error:()=>{
+    
+      }
+    })
+
+    console.log("here");
   }
-}
+
+  }
+
 
 
 

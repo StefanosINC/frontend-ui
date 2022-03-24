@@ -25,8 +25,8 @@ public CreateTimePunch(timecard: TimeCard): Observable<TimeCard[]>{
   return this.http.get<TimeCard[]>(`${this.apiServerUrl}/service1/Punch/${timecard}`);
 }
 // Delete Time Card API
-public DeleteTimePunch(id: TimeCard): Observable<TimeCard[]>{
-  return this.http.get<TimeCard[]>(`${this.apiServerUrl}/service1/DeleteTimeCardID/${id}`);
+public DeleteTimePunch(employee_id: number): Observable<void[]>{
+  return this.http.get<void[]>(`${this.apiServerUrl}/DeleteTimeCardID/${employee_id}`);
 }
 
 // Update Time Punch API

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Employee } from 'src/app/Models/employee';
 import { EmployeeserviceService } from 'src/service/employeeservice.service';
 import { NewPersonComponent } from '../../new-person/new-person.component';
 
@@ -27,7 +28,7 @@ export class EmployeeManagementUIComponent implements OnInit {
     return this.api.getEmployees().subscribe((data: any[])=>{
       console.log(data);
       this.listOfData = data;
-      console.log("this is the list : " + data);
+      console.log(data);
     })
 
   }
@@ -65,12 +66,13 @@ openDialog() {
     console.log("here");
   }
   
-  editProduct(row : any){
+  editProduct(employee : any){
+    console.log(employee);
     console.log("Edit Component");
     this.dialog.open(NewPersonComponent,{
       width:'30%',
-      data:row
-     
+      data:employee
+   
       
     }).afterClosed().subscribe(val=>{
       if(val === 'update'){

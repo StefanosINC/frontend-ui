@@ -3,7 +3,7 @@
 
 export class Employee{
 
-    public  id: number = -1;
+    public  employee_id: number = -1;
     public  username: string = "";
     public password: string = "";
     public  email: string = "";
@@ -13,9 +13,9 @@ export class Employee{
    public role: string = "";
     
 
-    constructor(id: number, username: string, password: string, email: string, phone: string, firstname: string, lastname: string, role: string){
+    constructor(employee_id: number, username: string, password: string, email: string, phone: string, firstname: string, lastname: string, role: string){
 
-        this.id = id;
+        this.employee_id = employee_id;
         this.username = username;
         this.password = password;
         this.email = email;
