@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Employee } from 'src/app/Models/employee';
 import { EmployeeserviceService } from 'src/service/employeeservice.service';
+import { EditPersonComponent } from '../../edit-person/edit-person/edit-person.component';
 import { NewPersonComponent } from '../../new-person/new-person.component';
 
 @Component({
@@ -41,21 +42,18 @@ openDialog() {
    
   }).afterClosed().subscribe(val=>{
     if(val ==='save'){
-      this.getEmployees();
+      this.ReturnEmployees();
       console.log(val + " This is the in the Employee UI");
     }
   })
 }
-  getEmployees() {
-    throw new Error('Method not implemented.');
-  }
-
+ 
   Delete(id: number){
     this.api.deleteEmployee(id).subscribe({
       next:(res)=>{
         console.log(res);
        
-        this.getEmployees();
+        this.ReturnEmployees();
 
       },
       error:()=>{
@@ -66,22 +64,26 @@ openDialog() {
     console.log("here");
   }
   
-  editProduct(employee : any){
-    console.log(employee);
+  editProduct(data : any){
+    console.log(data);
     console.log("Edit Component");
     this.dialog.open(NewPersonComponent,{
       width:'30%',
-      data:employee
+      data:data
    
       
     }).afterClosed().subscribe(val=>{
       if(val === 'update'){
        
-        this.getEmployees();
+     
+        this.ReturnEmployees();
       }
     })
     
   }
+  
+ 
+  
 
 }
 

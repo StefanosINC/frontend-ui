@@ -36,37 +36,40 @@ export class NewPersonComponent implements OnInit {
        role : ['', Validators.required]
        
      });
+     if(this.editData){
+      console.log("Here in updated");
+      this.actionBtn = "Update";
+      this.employeeForm.controls['username'].setValue(this.editData.username);
+      this.employeeForm.controls['password'].setValue(this.editData.password);
+      this.employeeForm.controls['email'].setValue(this.editData.email);
+      this.employeeForm.controls['phone'].setValue(this.editData.phone);
+      this.employeeForm.controls['firstname'].setValue(this.editData.firstname);
+      this.employeeForm.controls['lastname'].setValue(this.editData.lastname);
+      this.employeeForm.controls['role'].setValue(this.editData.role);
+      
+    
+    
+      
+    }
+  }
   
-if(this.editData){
-  console.log("Here in updated");
-  this.actionBtn = "Update";
-  this.employeeForm.controls['username'].setValue(this.editData.username);
-  this.employeeForm.controls['password'].setValue(this.editData.password);
-  this.employeeForm.controls['email'].setValue(this.editData.email);
-  this.employeeForm.controls['phone'].setValue(this.editData.phone);
-  this.employeeForm.controls['firstname'].setValue(this.editData.firstname);
-  this.employeeForm.controls['lastname'].setValue(this.editData.lastname);
-  this.employeeForm.controls['role'].setValue(this.editData.role);
-  
-}
-}
+
 // create Employee method
 CreateEmployee(){
   
   // if(!this.editData){
       if(!this.editData){
-        console.log("here");
+       
     if(this.employeeForm.valid){
   
-      console.log("This is before the API" + this.employeeForm);
       this.api.addEmployee(this.employeeForm.value).subscribe({
         next:(res)=>{
 
-          console.log(res);
-          // alert("Employee Created Sucessful");
-          // this.employeeForm.reset();
-          // this.dialogRef.close('save');
-          // console.log(res);
+         
+           alert("Employee Created Sucessful");
+          this.employeeForm.reset();
+           this.dialogRef.close('save');
+       
         },
         error:()=>{
           alert("Error while adding the products");
@@ -76,20 +79,21 @@ CreateEmployee(){
     }
   }else{
    
-    this.Update();
-    console.log("test");
+  this.Update();
   }
 }
   
 Update(){
 
-  this.api.updateEmployee(this.employeeForm.value).subscribe({
+  this.api.updateEmployee(this.employeeForm.value, this.editData.employee_id).subscribe({
     next:(res)=> {
       
       alert("Blog updated sucessfully");
       this.employeeForm.reset();
       this.dialogRef.close('update');
-     
+     console.log("this is update below");
+      console.log(res);
+
     },
     error:()=>{
       alert("Error while updating the blog!");
