@@ -14,6 +14,7 @@ export class AdminUiComponent implements OnInit {
   isEmployee = false;
   isSchedule = false;
   isTimecard = false;
+  
 
   constructor() { }
 

@@ -10,7 +10,7 @@
       <div class="sidebar-logo">
         <a href="" target="_blank">
           <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
-          <h1>WorkX Time and Attendance</h1>
+         
         </a>
       </div>
       <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
@@ -54,7 +54,7 @@
         <div class="inner-content">
         
           <router-outlet></router-outlet>
-            
+         
             <app-employee-management-ui *ngIf = "isEmployee"></app-employee-management-ui>
             <app-schedulecomponent *ngIf = "isSchedule"></app-schedulecomponent>
             <app-time-card-sheet *ngIf = "isTimecard"></app-time-card-sheet>

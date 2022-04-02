@@ -3,9 +3,11 @@
     
       <ul nz-menu nzTheme="dark" nzMode="horizontal">
         <li nz-menu-item>Employee Portal</li>
+        <li nz-menu-item>Clock In</li>
+        <li nz-menu-item>Clock Out</li>
         <li nz-menu-item>Sign Out</li>
-        <li nz-menu-item>Pay To Date</li>
-        <li nz-menu-item>Company News and Alerts</li>
+     
+      
       
       </ul>
     </nz-header>
@@ -15,10 +17,13 @@
       </nz-breadcrumb>
       <div class="inner-content">
         <h1>Employee Management Portal</h1>
+        <h2>Employee Schedule</h2>
+        
+      
         <div class="inner-buttons">
-        <button nz-button nzType="Primary">Clock In</button>
-        <button nz-button nzType="default">Clock Out</button>
+       
 
+        <app-schedulecomponent></app-schedulecomponent>
     </div>
       </div>
     </nz-content>
