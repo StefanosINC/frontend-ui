@@ -1,1 +1,8 @@
-<p>schedulecomponent worksasdfasdf!</p>
+<kendo-scheduler
+    [kendoSchedulerBinding]="events"
+    [kendoSchedulerReactiveEditing]="createFormGroup"
+    [selectedDate]="selectedDate"
+    style="height: 700px;"
+  >
+    <kendo-scheduler-week-view startTime="07:00"> </kendo-scheduler-week-view>
+  </kendo-scheduler>

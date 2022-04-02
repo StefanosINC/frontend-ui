@@ -36,6 +36,8 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { EditPersonComponent } from './AdminSide/edit-person/edit-person/edit-person.component';
 import { SettingsComponent } from './AdminSide/settings/settings.component';
+import { SchedulerModule } from '@progress/kendo-angular-scheduler';
+
 
 @NgModule({
   declarations: [
@@ -78,7 +80,8 @@ import { SettingsComponent } from './AdminSide/settings/settings.component';
     MatSortModule,
     NzBreadCrumbModule,
     NzGridModule,
-    NzTableModule
+    NzTableModule,
+    SchedulerModule
 
   ],
   providers: [EmployeeserviceService, { provide: NZ_I18N, useValue: en_US }],
