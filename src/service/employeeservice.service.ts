@@ -39,6 +39,12 @@ export class EmployeeserviceService {
         public updateEmployee(employee: Employee, employee_id: number): Observable<Employee[]>{
             return this.http.put<Employee[]>(`${this.apiServerUrl}/updateEmployee/${employee_id}`, employee);
         }
+
+        public LoginEmployee(username: String, password: String): Observable<Employee>{
+            return this.http.post<Employee>(`${this.apiServerUrl}/login`, {
+             username, password
+            });
+        }
       
     }
 

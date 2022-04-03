@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {LoginserviceService} from '../../../service/loginservice.service';
+import { EmployeeserviceService } from 'src/service/employeeservice.service';
+import { Employee } from './../../Models/employee';
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
@@ -17,30 +18,40 @@ export class UserLoginComponent implements OnInit {
   loginSuccess = false;
 
 
-  constructor(private route: Router, private authService: LoginserviceService) { }
+  constructor(private route: Router, private authService: EmployeeserviceService) { }
 
   ngOnInit(): void {
   }
 
   // Navigation route to the Admin - ui
   
-  Nextpage(){
+  ToggleLogin(){
     
-    // this.route.navigate(['/admin-ui']);
-    // console.log("clicked");
-    this.authService.login(this.username, this.password).subscribe((result: any) => {
+   return this.authService.LoginEmployee(this.username, this.password).subscribe({
+    next:(res)=>{
+
       this.invalidLogin = false;
       this.loginSuccess = true;
       this.successMessage = " login sucessful";
-      this.route.navigate(['/admin-ui']);
+      if(this.username == "admin" && this.password == "admin"){
+        this.route.navigate(['/admin-ui']);
+      }
+      else{
+        this.route.navigate(['employee-ui']);
+      }
+   
+      console.log(res);
+
   
       // redirect to main page
-    }, () => {
+    },
+    
+     error:() => {
       this.invalidLogin = true;
       this.loginSuccess == false;
     }
 
-    )};
+    });
   }
  
-
+}
