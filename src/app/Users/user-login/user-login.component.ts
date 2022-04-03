@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import {LoginserviceService} from '../../../service/loginservice.service';
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
@@ -15,7 +15,9 @@ export class UserLoginComponent implements OnInit {
   successMessage: string;
   invalidLogin = false;
   loginSuccess = false;
-  constructor(private route: Router) { }
+
+
+  constructor(private route: Router, private authService: LoginserviceService) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +27,18 @@ export class UserLoginComponent implements OnInit {
   Nextpage(){
     
     this.route.navigate(['/admin-ui']);
+    console.log("clicked");
+    this.authService.login(this.username, this.password).subscribe((result: any) => {
+      this.invalidLogin = false;
+      this.loginSuccess = true;
+      this.successMessage = " login sucessful";
+      // redirect to main page
+    }, () => {
+      this.invalidLogin = true;
+      this.loginSuccess == false;
+    }
 
+    )};
   }
-}
+ 
+

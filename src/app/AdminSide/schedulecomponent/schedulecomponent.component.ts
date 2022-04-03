@@ -39,7 +39,7 @@ enum EditMode {
 })
 export class SchedulecomponentComponent {
 
-  public selectedDate: Date = new Date("2018-10-22T00:00:00");
+  public selectedDate: Date = new Date("2022-10-22T00:00:00");
   public formGroup: FormGroup;
   public events: SchedulerEvent[] = [
     {

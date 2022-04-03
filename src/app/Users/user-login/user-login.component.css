@@ -266,3 +266,13 @@ html {
     margin: 10px;
     font-weight: bold;
   }
+  div.wrapper.fadeInDown{
+    background-color: #537895;
+background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+    
+  }
+  .vid{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
