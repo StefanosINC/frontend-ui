@@ -12,7 +12,7 @@ import { NewPersonComponent } from './AdminSide/new-person/new-person.component'
 import { EmployeeUiComponent } from './EmployeeSide/EmployeeUI/employee-ui/employee-ui.component';
 import {NzBreadCrumbModule} from 'ng-zorro-antd/breadcrumb';
 import { EmployeeManagementUIComponent } from './AdminSide/employee-managementUI/employee-management-ui/employee-management-ui.component';
-
+import { SettingsComponent } from './AdminSide/settings/settings.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/user-login' },
   { path: 'employee-management', component: EmployeeManagementComponent},
@@ -23,7 +23,7 @@ const routes: Routes = [
   {path: 'new-person', component: NewPersonComponent},
   {path: 'employee-ui', component: EmployeeUiComponent},
   {path: 'employee-managementUI', component: EmployeeManagementUIComponent},
-  
+  {path: 'settings', component: SettingsComponent}
 ];
 
 @NgModule({
@@ -35,4 +35,4 @@ exports: [RouterModule]
 })
 export class AppRoutingModule { }
 
-export const routingComponents = [EmployeeManagementComponent, SchedulecomponentComponent];
+export const routingComponents = [EmployeeManagementComponent, SchedulecomponentComponent, SettingsComponent];

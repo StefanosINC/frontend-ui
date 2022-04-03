@@ -14,7 +14,7 @@ export class AdminUiComponent implements OnInit {
   isEmployee = false;
   isSchedule = false;
   isTimecard = false;
-  
+  isSettings = false;
 
   constructor() { }
 
@@ -30,12 +30,14 @@ export class AdminUiComponent implements OnInit {
     this.isEmployee = !this.isEmployee;
     this.isSchedule = false;
     this.isTimecard = false;
+    this.isSettings = false;
   }
   ToggleSchedule(){
     // taking current value and flipping it 
     this.isSchedule = !this.isSchedule;
     this.isTimecard = false;
     this.isEmployee = false;
+    this.isSettings = false;
   }
   
   ToggleTimeCard(){
@@ -43,7 +45,14 @@ export class AdminUiComponent implements OnInit {
     this.isTimecard = !this.isTimecard;
     this.isEmployee = false;
     this.isSchedule = false;
+    this.isSettings = false;
   }
 
+  ToggleSettings(){
+    this.isSettings = !this.isSettings;
+    this.isEmployee = false;
+    this.isSchedule = false;
+    this.isTimecard = false;
+  }
   
 }

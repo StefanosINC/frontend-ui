@@ -26,12 +26,14 @@ export class UserLoginComponent implements OnInit {
   
   Nextpage(){
     
-    this.route.navigate(['/admin-ui']);
-    console.log("clicked");
+    // this.route.navigate(['/admin-ui']);
+    // console.log("clicked");
     this.authService.login(this.username, this.password).subscribe((result: any) => {
       this.invalidLogin = false;
       this.loginSuccess = true;
       this.successMessage = " login sucessful";
+      this.route.navigate(['/admin-ui']);
+  
       // redirect to main page
     }, () => {
       this.invalidLogin = true;

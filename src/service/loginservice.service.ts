@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { map } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,11 +18,12 @@ export class LoginserviceService {
 
 
   login(username: string, password: string) {
-    return this.http.get(environment.apiBaseUrl + `/api/v1/login`,
+    return this.http.get(environment.apiBaseUrl + `/test/login`,
       { headers: { authorization: this.createBasicAuthToken(username, password) } }).pipe(map((res) => {
         this.username = username;
         this.password = password;
         this.registerSuccessfulLogin(username, password);
+      
       }));
   }
 

@@ -27,16 +27,12 @@
               <a class = "nav-link" (click)="ToggleTimeCard()"> Employee TimeCards </a>
             </li>
             
-           
-          </ul>
-        </li>
-        <li nz-submenu nzOpen nzTitle="Settings" nzIcon="form">
-          <ul>
             <li nz-menu-item nzMatchRouter>
-              <a>General</a>
+              <a class = "nav-link" (click)="ToggleSettings()"> Settings</a>
             </li>
           </ul>
         </li>
+        
       </ul>
     </nz-sider>
     <nz-layout>
@@ -55,10 +51,11 @@
         
           <router-outlet></router-outlet>
          
+            <app-settings *ngIf = "isSettings"></app-settings>
             <app-employee-management-ui *ngIf = "isEmployee"></app-employee-management-ui>
             <app-schedulecomponent *ngIf = "isSchedule"></app-schedulecomponent>
             <app-time-card-sheet *ngIf = "isTimecard"></app-time-card-sheet>
-          
+           
         </div>
         <nz-footer>WorkXTimeAndAttendance Incorporated @2022</nz-footer>
       </nz-content>
