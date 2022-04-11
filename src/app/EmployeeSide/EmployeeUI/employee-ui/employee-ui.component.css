@@ -50,7 +50,17 @@
       .inner-buttons{
         display: flex;
   justify-content: center;
+
+  pointer-events: none;
+  
+
       }
     h2{
       text-align: center;
+    }
+    td{
+      pointer-events: none;
+    }
+    td.k-nonwork-hour{
+      pointer-events: none;
     }

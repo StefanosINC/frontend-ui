@@ -9,8 +9,8 @@ const baseData: any[] = [
         "Title": "Bowling tournament",
         "Description": "",
         "StartTimezone": null,
-        "Start": "2013-06-09T21:00:00.000Z",
-        "End": "2013-06-10T00:00:00.000Z",
+        "Start": "2022-06-09T21:00:00.000Z",
+        "End": "2022-06-10T00:00:00.000Z",
         "EndTimezone": null,
         "RecurrenceRule": null,
         "RecurrenceID": null,
@@ -20,6 +20,7 @@ const baseData: any[] = [
 ];
 
 const currentYear = new Date().getFullYear();
+
 const parseAdjust = (eventDate: string): Date => {
     const date = new Date(eventDate);
     date.setFullYear(currentYear);

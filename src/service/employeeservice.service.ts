@@ -12,6 +12,7 @@ import { Employee } from '../app/Models/employee';
 export class EmployeeserviceService {
   private apiServerUrl = environment.apiBaseUrl;
 
+  newEmployee: Employee;
   constructor(private http: HttpClient) { }
 
     
@@ -40,11 +41,25 @@ export class EmployeeserviceService {
             return this.http.put<Employee[]>(`${this.apiServerUrl}/updateEmployee/${employee_id}`, employee);
         }
 
-        public LoginEmployee(username: String, password: String): Observable<Employee>{
-            return this.http.post<Employee>(`${this.apiServerUrl}/login`, {
+        public LoginEmployee(username: String, password: String): Employee{
+            this.http.post<Employee>(`${this.apiServerUrl}/login`, {
              username, password
-            });
+            }).subscribe({
+                next:(res)=>{
+
+                   this.newEmployee = new Employee(res.employee_id, res.username, res.password, res.email, res.phone, res.firstname, res.lastname, res.role);
+                }
+            })
+
+            return this.newEmployee;
+
+
         }
+        
+            public getLogin(){
+
+                return this.newEmployee;
+            }
       
     }
 

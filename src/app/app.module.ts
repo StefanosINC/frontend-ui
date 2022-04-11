@@ -37,6 +37,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { EditPersonComponent } from './AdminSide/edit-person/edit-person/edit-person.component';
 import { SettingsComponent } from './AdminSide/settings/settings.component';
 import { SchedulerModule } from '@progress/kendo-angular-scheduler';
+import { PunchComponent } from './EmployeeSide/EmployeeAction/punch/punch.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { SchedulerModule } from '@progress/kendo-angular-scheduler';
     EmployeeUiComponent,
     EmployeeManagementUIComponent,
     EditPersonComponent,
-    SettingsComponent
+    SettingsComponent,
+    PunchComponent
  
   ],
   imports: [

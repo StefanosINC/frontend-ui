@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class AdminUiComponent implements OnInit {
   [x: string]: any;
   isCollapsed = false;
-  isEmployee = false;
+  isEmployee = true;
   isSchedule = false;
   isTimecard = false;
   isSettings = false;

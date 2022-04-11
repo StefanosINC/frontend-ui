@@ -96,16 +96,4 @@ export class SchedulecomponentComponent {
     return len === 0 ? 1 : this.events[this.events.length - 1].id + 1;
   }
 
-  // public startEndValidator: ValidatorFn = (fg: FormGroup) => {
-  //   const start = fg.get("start").value;
-  //   const end = fg.get("end").value;
-
-  //   if (start !== null && end !== null && start.getTime() < end.getTime()) {
-  //     return null;
-  //   } else {
-  //     return { range: "End date must be greater than Start date" };
-  //   }
-  // };
-
-
 }
