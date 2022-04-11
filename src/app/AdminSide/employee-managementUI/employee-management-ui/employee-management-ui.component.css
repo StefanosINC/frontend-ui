@@ -29,3 +29,6 @@ mat-focus-indicator mat-raised-button mat-button-base mat-primary{
     background: rgb(24, 144, 255);
     margin-bottom: 10px;
 }
+h2{
+    text-align: center;
+}

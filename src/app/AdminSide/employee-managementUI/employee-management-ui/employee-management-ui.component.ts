@@ -16,7 +16,8 @@ export class EmployeeManagementUIComponent implements OnInit {
   
 
   constructor(private api: EmployeeserviceService, private dialog: MatDialog) { }
-
+  today: number = Date.now();
+  
   ngOnInit(): void {
 
     this.ReturnEmployees();

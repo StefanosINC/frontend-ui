@@ -1,7 +1,8 @@
 
 <h1>Time card</h1> 
-<button mat-raised-button color="primary">Create Time Slot</button>
-<!-- <button mat-raised-button color="primary" (click)="openDialog()"> Add Time Punch</button> -->
+<h2>{{ today | date:'medium' }}  </h2>
+<button mat-raised-button color="primary" (click)="openDialog()">Create Time Slot</button>
+
 <nz-table #fixedTable [nzData]="listOfData" [nzScroll]="{ x: '1000px', y: '240px' }">
     <thead>
       <tr>
@@ -31,7 +32,7 @@
         <td nzRight>
         
           <button nz-icon nzType="delete" nzTheme="twotone" (click)="Delete(data.id)"></button>
-          <button nz-icon nzType="edit" nzTheme="twotone" mat-dialog-close></button> 
+          <button nz-icon nzType="edit" nzTheme="twotone" (click)="editProduct(data)"></button>
          
           <!--<button mat-raised-button color="warn" (click)="editTimeCard(data)" mat-dialog-close>Edit</button> -->
          

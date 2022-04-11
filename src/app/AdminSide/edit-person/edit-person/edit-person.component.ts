@@ -32,7 +32,7 @@ export class EditPersonComponent implements OnInit {
        
      });
      if(this.editData){
-      console.log("Here in updated");
+      console.log("Here in updated This is being used");
       this.actionBtn ="Test";
       this.employeeForm.controls['username'].setValue(this.editData.username);
       this.employeeForm.controls['password'].setValue(this.editData.password);

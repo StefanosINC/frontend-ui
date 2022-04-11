@@ -3,7 +3,7 @@
 
 export class TimeCard{
 
-   public id: number =  -1;
+   public employee_id: number =  -1;
    public firstname: string = "";
    public lastname: string = "";
    public punch_in:  string = "";
@@ -12,9 +12,9 @@ export class TimeCard{
    public role: string = "";
 
 
-   constructor(id: number, firstname: string, lastname: string, punch_in: string, punch_out: string, comments: string, role: string){
+   constructor(employee_id: number, firstname: string, lastname: string, punch_in: string, punch_out: string, comments: string, role: string){
 
-    this.id = id;
+    this.employee_id = employee_id;
     this.firstname = firstname;
     this.lastname = lastname;
     this.punch_in = punch_in;

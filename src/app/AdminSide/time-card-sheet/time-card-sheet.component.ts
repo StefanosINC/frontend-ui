@@ -6,6 +6,7 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { EmployeeserviceService } from 'src/service/employeeservice.service';
 import { TimecardService } from 'src/service/timecard.service';
+import { NewTimeComponent } from '../new-time/new-time.component';
 
 
 
@@ -17,10 +18,12 @@ import { TimecardService } from 'src/service/timecard.service';
 export class TimeCardSheetComponent implements OnInit {
 
   listOfData: Array<{ id: number; firstname: string, lastname: string, punch_in: string, punch_out: string, comments: string,  role: string}> = [];
-
+ 
 
   constructor(private api: TimecardService, private dialog: MatDialog) { }
-
+  today: number = Date.now();
+  
+    
   ngOnInit(): void {
 
     this.getTimeCard();
@@ -38,17 +41,58 @@ export class TimeCardSheetComponent implements OnInit {
    
     this.api.DeleteTimePunch(id).subscribe({
       next:(res)=>{
-        
+        console.log(res);
        console.log("test");
         this.getTimeCard();
 
       },
-    
+      error:()=>{
+      
+        alert("Employee Deleted Sucessflly");
+        console.log(id);
+        this.getTimeCard();
+      }
+
     });
 
 
 
   }
+
+  // Creaet a new Person ( this is the dialog open)
+openDialog() {
+  console.log("Time was opened");
+  this.dialog.open(NewTimeComponent, {
+    width: '30%'
+
+   
+  }).afterClosed().subscribe(val=>{
+    if(val ==='save'){
+      this.getTimeCard();
+      console.log(val + " This is the in the Employee UI");
+    }
+  })
+}
+ 
+  
+editProduct(data : any){
+  console.log(data);
+  console.log("Edit");
+  this.dialog.open(NewTimeComponent,{
+    width:'30%',
+    data:data
+ 
+    
+  }).afterClosed().subscribe(val=>{
+    if(val === 'update'){
+     
+   
+      this.getTimeCard();
+    }
+  })
+  
+}
+
 }
 
 

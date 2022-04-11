@@ -30,7 +30,7 @@ public DeleteTimePunch(employee_id: number): Observable<void[]>{
 }
 
 // Update Time Punch API
-public UpdateTimePunch(): Observable<TimeCard[]>{
-  return this.http.get<TimeCard[]>(`${this.apiServerUrl}/getCard`);
+public UpdateTimePunch(card: TimeCard, employee_id : number): Observable<TimeCard[]>{
+  return this.http.put<TimeCard[]>(`${this.apiServerUrl}/2/${employee_id}`, card);
 }
 }

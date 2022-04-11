@@ -39,6 +39,8 @@ import { SettingsComponent } from './AdminSide/settings/settings.component';
 import { SchedulerModule } from '@progress/kendo-angular-scheduler';
 import { PunchComponent } from './EmployeeSide/EmployeeAction/punch/punch.component';
 import { PunchoutComponent } from './EmployeeSide/EmployeeAction/punchout/punchout.component';
+import { NewTimeComponent } from './AdminSide/new-time/new-time.component';
+
 
 
 @NgModule({
@@ -54,7 +56,9 @@ import { PunchoutComponent } from './EmployeeSide/EmployeeAction/punchout/puncho
     EditPersonComponent,
     SettingsComponent,
     PunchComponent,
-    PunchoutComponent
+    PunchoutComponent,
+    NewTimeComponent,
+
  
   ],
   imports: [
