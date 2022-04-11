@@ -58,6 +58,7 @@ export class PunchComponent implements OnInit {
           next:(res)=>{
             console.log("Create Time punch");
             console.log(res);
+            this.dialogRef.close();
           },
           error:()=>{
             alert("Error while updating the blog");

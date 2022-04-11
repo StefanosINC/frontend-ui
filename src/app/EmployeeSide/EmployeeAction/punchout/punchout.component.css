@@ -1,0 +1,8 @@
+.mat-flat-button.mat-warn, .mat-raised-button.mat-warn, .mat-fab.mat-warn, .mat-mini-fab.mat-warn{
+    background: rgb(24, 144, 255);
+    margin-bottom: 10px;
+}
+mat-focus-indicator mat-raised-button mat-button-base mat-warn{
+    background: rgb(24, 144, 255);
+    margin-bottom: 10px;
+}

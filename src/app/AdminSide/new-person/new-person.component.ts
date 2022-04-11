@@ -88,7 +88,7 @@ Update(){
   this.api.updateEmployee(this.employeeForm.value, this.editData.employee_id).subscribe({
     next:(res)=> {
       
-      alert("Blog updated sucessfully");
+      alert("Employee Updated!");
       this.employeeForm.reset();
       this.dialogRef.close('update');
      console.log("this is update below");

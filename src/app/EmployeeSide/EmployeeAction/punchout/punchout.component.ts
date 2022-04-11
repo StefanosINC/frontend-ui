@@ -40,7 +40,7 @@ export class PunchoutComponent implements OnInit {
 
     if(!this.punch){
       console.log("Punch Form");
-      this.actionBtn="Clock In";
+      this.actionBtn="Punch Out";
       this.ClockInForm.controls['firstname'].setValue(clockInObject.firstname);
       this.ClockInForm.controls['lastname'].setValue(clockInObject.lastname);
       this.ClockInForm.controls['punch_out'].setValue(this.plzwork);
@@ -56,6 +56,8 @@ export class PunchoutComponent implements OnInit {
         this.timeservice.CreateTimePunch(this.ClockInForm.value).subscribe({
           next:(res)=>{
             console.log("Create Time punch");
+            this.ClockInForm.reset();
+            this.dialogRef.close();
             console.log(res);
           },
           error:()=>{

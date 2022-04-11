@@ -39,20 +39,17 @@ export class TimeCardSheetComponent implements OnInit {
     this.api.DeleteTimePunch(id).subscribe({
       next:(res)=>{
         
-       
+       console.log("test");
         this.getTimeCard();
 
       },
-      error:()=>{
     
-      }
-    })
+    });
 
-    console.log("here");
-  }
+
 
   }
-
+}
 
 
 

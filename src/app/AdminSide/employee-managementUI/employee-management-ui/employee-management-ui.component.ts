@@ -4,7 +4,7 @@ import { Employee } from 'src/app/Models/employee';
 import { EmployeeserviceService } from 'src/service/employeeservice.service';
 import { EditPersonComponent } from '../../edit-person/edit-person/edit-person.component';
 import { NewPersonComponent } from '../../new-person/new-person.component';
-import { NzIconModule } from 'ng-zorro-antd/icon';
+
 @Component({
   selector: 'app-employee-management-ui',
   templateUrl: './employee-management-ui.component.html',
@@ -51,18 +51,21 @@ openDialog() {
   Delete(id: number){
     this.api.deleteEmployee(id).subscribe({
       next:(res)=>{
-        console.log(res);
-       
+        alert("Product delete sucessfully");
         this.ReturnEmployees();
-
-      },
-      error:()=>{
     
-      }
+    },
+    error:()=>{
+      
+      alert("Employee Deleted Sucessflly");
+      console.log(id);
+      this.ReturnEmployees();
+    }
     })
-
-    console.log("here");
   }
+  
+
+
   
   editProduct(data : any){
     console.log(data);
