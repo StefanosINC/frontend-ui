@@ -1,19 +1,31 @@
-.example-spacer{
-    flex: 1 1 auto;
-    }
-    table {
-        width: 100%;
-    }
-    .mat-form-field{
-        font-size: 14px;
-        width: 100%;
-    
-    }
-    
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    h1{
-        text-align: center;
-    }
+nz-table{
+    height: 1000px;
+}
+h1{
+    text-align: center;
+    font-family: ui-serif;
+
+}
+button.anticon.anticon-delete{
+    padding: 10px 30px;
+    border: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+button.anticon.anticon-edit{
+    padding: 10px 30px;
+    border: none;
+}
+
+button.anticon.anticon-ad{
+    padding: 10px 30px;
+    border: none;
+}
+
+mat-focus-indicator mat-raised-button mat-button-base mat-primary{
+   
+}
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary{
+    background: rgb(24, 144, 255);
+    margin-bottom: 10px;
+}
