@@ -22,7 +22,7 @@ public getTimeCard(): Observable<TimeCard[]>{
 }
 // Create Time Card API
 public CreateTimePunch(timecard: TimeCard): Observable<TimeCard[]>{
-  return this.http.get<TimeCard[]>(`${this.apiServerUrl}/service1/Punch/${timecard}`);
+  return this.http.post<TimeCard[]>(`${this.apiServerUrl}/Punch `, timecard);
 }
 // Delete Time Card API
 public DeleteTimePunch(employee_id: number): Observable<void[]>{

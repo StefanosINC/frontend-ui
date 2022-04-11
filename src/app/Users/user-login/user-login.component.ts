@@ -38,9 +38,9 @@ export class UserLoginComponent implements OnInit {
 
       this.invalidLogin = false;
       this.loginSuccess = true;
-      this.successMessage = " login sucessful";
+      this.successMessage = " long gin sucessful";
     
-      if(this.username == "admin" && this.password == "admin"){
+      if(this.newEmployee.username == "admin" && this.newEmployee.password == "admin"){
 
         this.route.navigate(['/admin-ui']);
       }
@@ -52,7 +52,7 @@ export class UserLoginComponent implements OnInit {
       console.log("User Login Componenent");
       
     
-      console.log(this.newEmployee);
+   
    
       
 

@@ -2,7 +2,7 @@
     <nz-header>
     
       <ul nz-menu nzTheme="dark" nzMode="horizontal">
-        <li nz-menu-item>Clock Out</li>
+        <li nz-menu-item  (click)="ClockOut()">Clock Out</li>
         <li nz-menu-item (click)="ClockIn()">Clock In </li>
         <li nz-menu-item (click)="Back()">Sign Out</li>
      
@@ -18,7 +18,7 @@
       <div class="inner-content">
         <h1>Employee Management Portal</h1>
         <h2>Employee Schedule</h2>
-      
+        <h3>{{ today | date:'medium' }}  </h3>
         <div class="inner-buttons">
        
         <app-schedulecomponent></app-schedulecomponent>

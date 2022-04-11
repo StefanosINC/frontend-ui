@@ -38,6 +38,7 @@ import { EditPersonComponent } from './AdminSide/edit-person/edit-person/edit-pe
 import { SettingsComponent } from './AdminSide/settings/settings.component';
 import { SchedulerModule } from '@progress/kendo-angular-scheduler';
 import { PunchComponent } from './EmployeeSide/EmployeeAction/punch/punch.component';
+import { PunchoutComponent } from './EmployeeSide/EmployeeAction/punchout/punchout.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { PunchComponent } from './EmployeeSide/EmployeeAction/punch/punch.compon
     EmployeeManagementUIComponent,
     EditPersonComponent,
     SettingsComponent,
-    PunchComponent
+    PunchComponent,
+    PunchoutComponent
  
   ],
   imports: [

@@ -46,11 +46,9 @@ export class EmployeeserviceService {
              username, password
             }).subscribe({
                 next:(res)=>{
-
                    this.newEmployee = new Employee(res.employee_id, res.username, res.password, res.email, res.phone, res.firstname, res.lastname, res.role);
                 }
             })
-
             return this.newEmployee;
 
 

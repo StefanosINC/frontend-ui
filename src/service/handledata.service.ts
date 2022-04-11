@@ -21,19 +21,6 @@ export class HandledataService {
     });
 }
 
-  public handleData(){
-
-
-
-    this.EmployeeArray.push(this.newEmployee);
-
-    console.log(this.EmployeeArray.length);
-    // storing the login object
-    // functino to make the request and put in the storage
-    // function that pulls from the storage and returns the value
-    
-
-  }
 
 
 }

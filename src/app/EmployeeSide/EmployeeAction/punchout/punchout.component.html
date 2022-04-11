@@ -1,4 +1,4 @@
-<h1 mat-dialog-title> Clock In Form </h1>
+<h1 mat-dialog-title> Clock Out Form </h1>
 <div mat-dialog-content>
     <form [formGroup]="ClockInForm">
         <mat-form-field matColumnDef="firstname">
@@ -14,8 +14,8 @@
             </mat-form-field>
       
             <mat-form-field matColumnDef="outline">
-              <mat-label>punch_in</mat-label>
-              <input formControlName="punch_in" matInput placeholder="" readonly=""/>
+              <mat-label>punch_out</mat-label>
+              <input formControlName="punch_out" matInput placeholder="" readonly=""/>
               
             </mat-form-field>
       
@@ -33,5 +33,5 @@
               </div>
 
               <div mat-dialog-action [align]="'end'"></div>
-              <button mat-raised-button color="warn" (click)="PunchIn()"> {{actionBtn}}</button> 
+              <button mat-raised-button color="warn" (click)="PunchOut()"> {{actionBtn}}</button> 
            
