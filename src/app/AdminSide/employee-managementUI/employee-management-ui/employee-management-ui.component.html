@@ -1,5 +1,8 @@
 <h1>Employee Management</h1>
+<!-- <button nz-icon nzType="down-circle" nzTheme="twotone" (click)="openDialog()"></button> -->
 <button mat-raised-button color="primary" (click)="openDialog()"> Add Employee</button>
+<!-- <button nz-button nzType="primary" (click)="openDialog()">Add employee</button> -->
+
 <nz-table #fixedTable [nzData]="listOfData" [nzScroll]="{ x: '1000px', y: '240px' }">
     <thead>
       <tr>
@@ -29,9 +32,10 @@
 
 
         <td nzRight>
-          
-          <button mat-raised-button color="primary" (click)="Delete(data.employee_id)" mat-dialog-close>Delete</button>
-          <button mat-raised-button color="warn" (click)="editProduct(data)" mat-dialog-close>Edit</button>
+       
+          <button nz-icon nzType="delete" nzTheme="twotone" (click)="Delete(data.employee_id)"></button>
+        <!--<button mat-raised-button color="primary" (click)="Delete(data.employee_id)" mat-dialog-close>Delete</button> -->
+        <button nz-icon nzType="edit" nzTheme="twotone"(click)="editProduct(data)" mat-dialog-close></button> 
          
         </td>
        
