@@ -17,10 +17,14 @@ export class NewTimeComponent implements OnInit {
   // action btn
   actionBtn : string = "Save";
 
+  // Constructor that will have a formBuilder and call on the API timecard service. We are going to inject the Mat_Dialog_Data and create a new time component. 
+  // This will allow me to actually open the dialog of a component!
   constructor(private formBuilder: FormBuilder, private api : TimecardService, @Inject(MAT_DIALOG_DATA) public editData : any, private dialogRef : MatDialogRef<NewTimeComponent>) { }
+  // object for dates
   plzwork: object = new Date();
   ngOnInit(): void {
 
+    // employee timeform
     this.employeeForm = this.formBuilder.group({
       firstname : ['', Validators.required],
       lastname : ['', Validators.required],
@@ -32,6 +36,8 @@ export class NewTimeComponent implements OnInit {
 
        
      });
+
+     // Edit data form
      if(this.editData){
       console.log("Here in updated");
       console.log("Punch Form");
@@ -54,9 +60,10 @@ CreateTime(){
   
   // if(!this.editData){
       if(!this.editData){
-       
+       // check if valid
     if(this.employeeForm.valid){
   
+      // create time punch!
       this.api.CreateTimePunch(this.employeeForm.value).subscribe({
         next:(res)=>{
         
@@ -66,6 +73,7 @@ CreateTime(){
            this.dialogRef.close('save');
        
         },
+        // check if errors
         error:()=>{
           alert("Error while adding the products");
 
@@ -73,24 +81,23 @@ CreateTime(){
       })
     }
   }else{
-   
+   // update
     this.Update();
    
-    console.log("whats good");
 
   }
 }
 
  
 Update(){
-
+// Update Time Punch 
   this.api.UpdateTimePunch(this.employeeForm.value, this.editData.employee_id).subscribe({
     next:(res)=> {
       
       alert("Employee Updated!");
       this.employeeForm.reset();
       this.dialogRef.close('update');
-     console.log("this is update below");
+    
       console.log(res);
 
     },

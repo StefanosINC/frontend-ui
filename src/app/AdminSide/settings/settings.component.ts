@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+// This class just uses the HTML to reference a settings text. 
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',

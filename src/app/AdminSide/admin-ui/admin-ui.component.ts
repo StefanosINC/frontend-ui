@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin-ui',
   templateUrl: './admin-ui.component.html',
@@ -16,7 +16,7 @@ export class AdminUiComponent implements OnInit {
   isTimecard = false;
   isSettings = false;
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
 
@@ -48,11 +48,17 @@ export class AdminUiComponent implements OnInit {
     this.isSettings = false;
   }
 
+  // Settings Toggle
   ToggleSettings(){
     this.isSettings = !this.isSettings;
     this.isEmployee = false;
     this.isSchedule = false;
     this.isTimecard = false;
+  }
+  Back(){
+    
+    this.route.navigate(['user-login']);
+    
   }
   
 }

@@ -15,17 +15,21 @@ import { NewTimeComponent } from '../new-time/new-time.component';
   templateUrl: './time-card-sheet.component.html',
   styleUrls: ['./time-card-sheet.component.css']
 })
+// Time Card sheet componeent that implements all CRUD functionality!
 export class TimeCardSheetComponent implements OnInit {
 
+  // create a list of data that is set to recieve parametesr for the time card
   listOfData: Array<{ id: number; firstname: string, lastname: string, punch_in: string, punch_out: string, comments: string,  role: string}> = [];
  
-
+// constructor
   constructor(private api: TimecardService, private dialog: MatDialog) { }
+  // todays date time
   today: number = Date.now();
   
     
   ngOnInit(): void {
 
+    // load the time card on initiation
     this.getTimeCard();
   }
  

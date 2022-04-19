@@ -18,7 +18,6 @@ export class EmployeeUiComponent implements OnInit {
 
   constructor(private route: Router, private authService: EmployeeserviceService, private dialog: MatDialog) { }
   today: number = Date.now();
-  
     
   ngOnInit(): void {
     console.log("Username from the Login");

@@ -1,7 +1,7 @@
 import { SchedulerEvent } from '@progress/kendo-angular-scheduler';
 
-/* tslint:disable */
 
+/// Base Data 
 const baseData: any[] = [
     {
         "TaskID": 4,
@@ -18,21 +18,25 @@ const baseData: any[] = [
         "IsAllDay": false
     }
 ];
-
+// Current year is = to full year
 const currentYear = new Date().getFullYear();
 
+// parse the event date to string
 const parseAdjust = (eventDate: string): Date => {
     const date = new Date(eventDate);
     date.setFullYear(currentYear);
+    // return date
     return date;
 };
 
+// Set a random number integer function
 const randomInt = (min: number, max: number): number => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
+// display the date = current year
 export const displayDate = new Date(currentYear, 5, 24);
 
+// Further sample data from the Schedular Event
 export const sampleData = baseData.map(dataItem => (
     <SchedulerEvent> {
         id: dataItem.TaskID,
@@ -52,6 +56,7 @@ export const sampleData = baseData.map(dataItem => (
     }
 ));
 
+// Further sample cope that maps the scheduler event
 export const sampleDataWithResources = baseData.map(dataItem => (
     <SchedulerEvent> {
         id: dataItem.TaskID,
@@ -70,6 +75,7 @@ export const sampleDataWithResources = baseData.map(dataItem => (
     }
 ));
 
+// Custom Schemas
 export const sampleDataWithCustomSchema = baseData.map(dataItem => (
     {
         ...dataItem,

@@ -49,6 +49,7 @@ export class EmployeeserviceService {
                    this.newEmployee = new Employee(res.employee_id, res.username, res.password, res.email, res.phone, res.firstname, res.lastname, res.role);
                 }
             })
+            
             return this.newEmployee;
 
 

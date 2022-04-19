@@ -34,7 +34,7 @@ export class UserLoginComponent implements OnInit {
 
   ToggleLogin(){
     
-   this.newEmployee = this.authService.LoginEmployee(this.username, this.password)
+   this.newEmployee = this.authService.LoginEmployee(this.username, this.password);
 
       this.invalidLogin = false;
       this.loginSuccess = true;
@@ -44,6 +44,7 @@ export class UserLoginComponent implements OnInit {
 
         this.route.navigate(['/admin-ui']);
       }
+     
       else{
         this.route.navigate(['employee-ui']);
       }

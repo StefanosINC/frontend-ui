@@ -30,6 +30,10 @@
             <li nz-menu-item nzMatchRouter>
               <a class = "nav-link" (click)="ToggleSettings()"> Settings</a>
             </li>
+              
+            <li nz-menu-item nzMatchRouter>
+              <a class = "nav-link" (click)="Back()"> Back</a>
+            </li>
           </ul>
         </li>
         
@@ -55,6 +59,7 @@
             <app-employee-management-ui *ngIf = "isEmployee"></app-employee-management-ui>
             <app-schedulecomponent *ngIf = "isSchedule"></app-schedulecomponent>
             <app-time-card-sheet *ngIf = "isTimecard"></app-time-card-sheet>
+           
            
         </div>
         <nz-footer>WorkXTimeAndAttendance Incorporated @2022</nz-footer>
