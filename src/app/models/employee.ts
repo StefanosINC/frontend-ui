@@ -12,6 +12,7 @@ export class Employee{
    public lastname: string = "";
    public role: string = "";
     
+   // constructor
 
     constructor(employee_id: number, username: string, password: string, email: string, phone: string, firstname: string, lastname: string, role: string){
 

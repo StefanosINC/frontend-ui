@@ -8,26 +8,32 @@ import { TimecardService } from 'src/service/timecard.service';
   templateUrl: './punchout.component.html',
   styleUrls: ['./punchout.component.css']
 })
+// export the class Punch Out copmonent 
 export class PunchoutComponent implements OnInit {
 
+  // Clockin -> Form Group
  
   ClockInForm !: FormGroup;
 
+  // Action btn
   actionBtn : string = "Punch Out";
  
-
+// Constructor for the Punch Out component. It's important to reference all the forms needed as other classes, and employee service
   constructor(private formBuilder: FormBuilder, private api : EmployeeserviceService, @Inject(MAT_DIALOG_DATA) public punch : any, private dialogRef : MatDialogRef<PunchoutComponent>,private timeservice : TimecardService) { }
   today: number = Date.now();
+  // plz work -> object for dates
    plzwork: object = new Date();
   
 
+   // on initiation!
+   // Let the clockInObject of the of the logged in user be the credentials needed.
+   // This way we can have the user who is logged in be the user who can clock out
   ngOnInit(): void {
     let clockInObject = this.api.getLogin();
     console.log(clockInObject.employee_id);
 
     console.log(clockInObject.role);
-    console.log("plz work below");
-    console.log(this.plzwork);
+ 
    
     this.ClockInForm = this.formBuilder.group({
       firstname : ['', Validators.required],

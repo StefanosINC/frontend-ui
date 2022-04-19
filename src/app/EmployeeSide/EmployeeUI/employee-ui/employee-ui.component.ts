@@ -6,6 +6,7 @@ import { MatDialog, throwMatDialogContentAlreadyAttachedError } from '@angular/m
 import { PunchComponent } from './../../EmployeeAction/punch/punch.component';
 import { PunchoutComponent } from './../../EmployeeAction/punchout/punchout.component';
 
+// UserLogin Component UI 
 @Component({
   selector: 'app-employee-ui', 
   templateUrl: './employee-ui.component.html',
@@ -14,32 +15,38 @@ import { PunchoutComponent } from './../../EmployeeAction/punchout/punchout.comp
  
 })
 
+// Employee UI component class exported 
 export class EmployeeUiComponent implements OnInit {
-
+// Route the router, bring in the EmployeeService and dialog
   constructor(private route: Router, private authService: EmployeeserviceService, private dialog: MatDialog) { }
+  // DateTime
   today: number = Date.now();
     
+  // On initation 
   ngOnInit(): void {
-    console.log("Username from the Login");
-    
-    console.log("Convert method");
+  
     this.convert();
   }
+  // back button
   Back(){
     
     this.route.navigate(['user-login']);
     
   }
 
+  //clock into work 
+  // *** Reference the auth service as an object!!!
   ClockIn(){
     let clockInObject = this.authService.getLogin();
 
     console.log(clockInObject.employee_id);
     console.log("Component was opened");
    
+    // punch componenet!
     this.dialog.open(PunchComponent, {
       width: '30%'
   
+      // after close
      
     }).afterClosed().subscribe(val=>{
       if(val ==='save'){
@@ -48,15 +55,19 @@ export class EmployeeUiComponent implements OnInit {
     })
 }
 
+// clock out 
 ClockOut(){
   let clockInObject = this.authService.getLogin();
 
+  // return statements
   console.log(clockInObject.employee_id);
   console.log("Component was opened");
  
+  // punch out components
   this.dialog.open(PunchoutComponent, {
     width: '30%'
 
+    // close
    
   }).afterClosed().subscribe(val=>{
     if(val ==='save'){
@@ -65,10 +76,9 @@ ClockOut(){
   })
 }
 
+// convert date time
 convert(){
   this.today.toString();
-  console.log(this.today.valueOf.toString());
-  console.log(this.today);
-  console.log(this.today.toString());
+
 }
 }
